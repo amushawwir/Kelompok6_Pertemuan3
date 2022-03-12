@@ -14,10 +14,49 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index', [
+        "title" => "Home"
+    ]);
+});
+Route::get('/about', function () {
+    return view('about', [
+        "title" => "About"
+    ]);
+});
+Route::get('/cart', function () {
+    return view('cart', [
+        "title" => "Cart"
+    ]);
+});
+Route::get('/category', function () {
+    return view('category', [
+        "title" => "Category"
+    ]);
+});
+Route::get('/contact', function () {
+    return view('contact', [
+    "title" => "Contact"
+    ]);
+});
+Route::get('/details', function () {
+    return view('details', [
+    "title" => "Details"
+    ]);
+});
+Route::get('/myaccount', function () {
+    return view('myaccount', [ 
+    "title" => "My Account"
+    ]);
+});
+Route::get('/register', function () {
+    return view('register', [
+        "title" => "Register"
+    ]);
+});
+Route::get('/specials', function () {
+    return view('specials', [
+        "title" => "Specials"
+    ]);
 });
 
 Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
